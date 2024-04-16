@@ -1,0 +1,96 @@
+{
+	"compiler": {
+		"version": "0.8.25+commit.b61c2a91"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "maxSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					}
+				],
+				"name": "mint",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"maxSupply()": {
+					"details": "Max supply of editions"
+				},
+				"mint(address)": {
+					"details": "Mint NFTs to a single recipient"
+				},
+				"totalSupply()": {
+					"details": "Total supply of editions"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Manifold ERC721 Edition Controller interface",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"IManifoldERC721Edition.sol": "IManifoldERC721Edition"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"IManifoldERC721Edition.sol": {
+			"keccak256": "0x2e297cd8afe7f6a5d11197f380c6046c31e7ea151365573134ce54e127ab1b6a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://06a876a803297b434c87c418247886fde1eee05167fcb5d4aac7ce0d852be5da",
+				"dweb:/ipfs/QmU8fdpFwdBjmJKYXvYzaT5vdCgf5GGFs7Ti8MdzzvWoai"
+			]
+		}
+	},
+	"version": 1
+}

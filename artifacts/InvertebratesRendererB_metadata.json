@@ -1,0 +1,80 @@
+{
+	"compiler": {
+		"version": "0.8.25+commit.b61c2a91"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "color",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "hash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "string",
+						"name": "mood",
+						"type": "string"
+					}
+				],
+				"name": "getScriptHeader",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"InvertebratesBody.sol": "InvertebratesRendererB"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"InvertebratesBody.sol": {
+			"keccak256": "0x3d249464779d083f126dd96734c9591ba9406ff8b30f95aabdaa1235e3037d19",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://481d8fb134152aa848ffbe9d1f0c723ec821c8e3f0b6a798c9fa4ead8afa4daa",
+				"dweb:/ipfs/QmXQBae5xN619NjbX7wk1kSAmMmzcBcxQgoxkQFFgKobts"
+			]
+		}
+	},
+	"version": 1
+}
