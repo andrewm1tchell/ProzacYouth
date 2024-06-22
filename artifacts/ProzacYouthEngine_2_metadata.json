@@ -6,28 +6,7 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "tokenId",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "color",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "hash",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "mood",
-						"type": "string"
-					}
-				],
+				"inputs": [],
 				"name": "getScript",
 				"outputs": [
 					{
@@ -53,7 +32,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"InvertebratesEngine_2.sol": "ProzacYouthEngine_2"
+			"ProzacYouthEngine_2.sol": "ProzacYouthEngine_2"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -67,12 +46,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"InvertebratesEngine_2.sol": {
-			"keccak256": "0xa37a2ab405a8fbadd8413c15b96405d324227c6e5289a1b6078a07cf14cd5e42",
+		"ProzacYouthEngine_2.sol": {
+			"keccak256": "0x7ce2e6fe2198514fa43f406b3dc61951b088853e7c31ccbb925aad3d4b3a64b2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://506fb27771c7b9f25be39e2d1771a325efa373c44b1f0a40e6fac808d2faa52b",
-				"dweb:/ipfs/QmRA2jPPo94owbv9gposvi2wthwxQ6Zt4QSr5W1CafyvNg"
+				"bzz-raw://8149a7a0bc364ce70818159d16068040c81202427c0a819dea1a9f5a79bfceec",
+				"dweb:/ipfs/QmZLAgZWqUYJhhnpDAoFFn9JBEBT9umRyf3AzfUGYYiHkX"
 			]
 		}
 	},

@@ -22,24 +22,11 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "tokenId",
+						"name": "iconHref",
 						"type": "string"
 					}
 				],
 				"name": "getAnimHeader",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getSVGforThumbnail",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -64,7 +51,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"InvertebratesEngine_1.sol": "ProzacYouthEngine_1"
+			"ProzacYouthEngine_1.sol": "ProzacYouthEngine_1"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -78,12 +65,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"InvertebratesEngine_1.sol": {
-			"keccak256": "0x1ef07610744b3964a5cbae62eb1c6bc7e5d5aec0f805c599d650c7ead4383a0a",
+		"ProzacYouthEngine_1.sol": {
+			"keccak256": "0xf8744c5803aa3b9a12dceff59adcec60520276bd5299d0d567c1a298173bc181",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://01285b4b04f4719555c396e252aeba83c155dfe3f2c6c62fe87265eba5fa8b19",
-				"dweb:/ipfs/QmZ1qpJ85FQHVZQL6LwYCBoGTfTjun5gXSxgxPECBRrXW8"
+				"bzz-raw://d6a88ae58e0e0984528602dcff3b61e6940697f1255d9021af3f3f8bb7f961a6",
+				"dweb:/ipfs/QmZJLpJggmGtHbNk7GGXz1wtCu7KXDUtdkLW69BpWTfqQL"
 			]
 		}
 	},
