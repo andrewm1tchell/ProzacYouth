@@ -192,31 +192,39 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
         _name = name;
     }
 
-    function setPreviewImageData(string memory img) public {
+    function addPreviewImageDataChunk(string memory chunkData) public {
         require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
-        _previewImageDataUri = img;
+
+        _previewImageDataUri = string(abi.encodePacked(_previewImageDataUri, chunkData));
     }
 
+    function deletePreviewImageDataChunk() public {
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
+
+        _previewImageDataUri = "";
+    }
+    
     function tokenURI(address creator,uint256 tokenId) public view virtual override returns (string memory) {
         return formatTokenURI(tokenId);
     }
 
     function formatTokenURI(uint256 tokenId) public view returns (string memory) {
         string memory _animURI = animToURI(string(abi.encodePacked(
-            ProzacYouthEngine1.getAnimHeader(ProzacYouthUtils1.getAndrewUrl(), ProzacYouthUtils1.getEntriesHTML()),
+            ProzacYouthEngine1.getAnimHeader(ProzacYouthUtils1.getAndrewUrl(), ProzacYouthUtils1.getEntriesHTML(), ProzacYouthUtils1.getTotalEntries()),
             ProzacYouthEngine2.getScript(ProzacYouthUtils1.getModeRaw()),
             ProzacYouthEngine1.getAnimFooter()
         )));
         string memory byteEncoded = Base64.encode(bytes(abi.encodePacked(
-            '{"name": "',
-            _name,
-            '", "description": "_description",',
-            '"image": "',
-            _previewImageDataUri,
-            '", "animation_url": "',
-            _animURI,
-            '"}'       
-             )));
+            '{"name": "', 
+            _name, 
+            '", "description": "', 
+            _description, 
+            '", "image": "',
+             _previewImageDataUri,
+              '", "animation_url": "', 
+              _animURI, 
+              '"}'
+        )));
         return string(abi.encodePacked("data:application/json;base64,", byteEncoded));
     }
 

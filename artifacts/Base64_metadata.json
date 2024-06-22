@@ -158,11 +158,11 @@
 			]
 		},
 		"Extension.sol": {
-			"keccak256": "0x8ab030ff63782dd27638f2048bb10554dc62a536883896f64ecc7763bf2f6a56",
+			"keccak256": "0xba848e4be347b210941657e367a66e0e00f1f932bcadada752bfa5a98ea8f65d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3e046f9cdfcefbd02f79d7ec6e7af1bfcdcf609515de6bd7a8f23f8033855634",
-				"dweb:/ipfs/Qmb26FteLfWTbPdHcCE8sr2NtF4hNtwmpEmCiH84zpWxnF"
+				"bzz-raw://4b68619e94101f54820f40e28150811489edc317653ffa18b2a2fae9c3fd38b2",
+				"dweb:/ipfs/QmfEj9QyPQt8VTGk2Ck1AbGNVpxqfAdwXFgFc2v7K1tfE8"
 			]
 		},
 		"IManifoldERC721Edition.sol": {
@@ -174,19 +174,27 @@
 			]
 		},
 		"ProzacYouthEngine_1.sol": {
-			"keccak256": "0xe6a2284c9eb85b83314165569dbf5f22d2ab69cc165a6b6fbf13b10d8e5945ed",
+			"keccak256": "0xfea960d26e1be866f71fd5028f1ce39c82072685a181852c5fa436ed84c132d3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d2e92f8ca2596a860847caafc20a253231eb0a7e252e1a73068ae636de60902c",
-				"dweb:/ipfs/QmR5YYwK4o52fU6JBe7RasvieoqScL13qAuroAv26tSaQQ"
+				"bzz-raw://ae9857b0ca4ddf65bf72a3c8c6ec9ab7fe9e7db91ec2150c609b423c12e71b66",
+				"dweb:/ipfs/QmcjdDu9QHjy85Yd74eKyvbAB4EgmCLkLkUGQtiPUKLVbB"
 			]
 		},
 		"ProzacYouthEngine_2.sol": {
-			"keccak256": "0x68b8899ce768e1debe3261c0bb9fafd439154f6048233d46d054c6b1d06c5b07",
+			"keccak256": "0xea91f9d10931a257ae132530b5eaaffdab4bfe2cb5c369088a1d84de7bc77f0f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0e4c6a6ebbac4ff503d924812ee836a106ae98341b3fd1abc2ae8b8714aa3199",
-				"dweb:/ipfs/QmerPjf4YHPXK97zbYPzgGdDnqseWkXGVWuQS4jEf7WbYG"
+				"bzz-raw://bf0f25c91f3f54e55fb210cfa9bd9ed2ee62e2a77675e10c4222c056415e795e",
+				"dweb:/ipfs/QmYg7HfBJhQJ5y8HBjyMWun4B8qFWFwsQJFX6bZqooo6ZU"
+			]
+		},
+		"ProzacYouthUtils.sol": {
+			"keccak256": "0xb0375b55f770abed9260d016bb37480e7bc1a7eb34b2d4c6151d80097b82028a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7a34dd5f25baf91130ac48e86e8bd89990cc03076184c2d4b347edf23f385d24",
+				"dweb:/ipfs/QmeL5VLCZfSqjZEXYQQEc3ozAQUKs5Nfx3GgGWiWebiPEK"
 			]
 		}
 	},

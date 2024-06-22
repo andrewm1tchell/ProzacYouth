@@ -63,6 +63,13 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "clearEntries",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -184,9 +191,9 @@
 				"name": "getTotalEntries",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "",
-						"type": "uint256"
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -325,11 +332,11 @@
 	},
 	"sources": {
 		"ProzacYouthUtils.sol": {
-			"keccak256": "0xb0375b55f770abed9260d016bb37480e7bc1a7eb34b2d4c6151d80097b82028a",
+			"keccak256": "0x34fee70c40d020b4b1890a95bf13a33a89141975eb2d59586ac19855dd764042",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7a34dd5f25baf91130ac48e86e8bd89990cc03076184c2d4b347edf23f385d24",
-				"dweb:/ipfs/QmeL5VLCZfSqjZEXYQQEc3ozAQUKs5Nfx3GgGWiWebiPEK"
+				"bzz-raw://26fbabf0b47c21f2e4cf17a21a31a6dea513a5bbff81e9cd7855f7f6e888805e",
+				"dweb:/ipfs/QmRtoedWkYDxmdEq4SkQgJ59SN3jcyWkcKidSkKdpM5HLw"
 			]
 		}
 	},
