@@ -6,29 +6,40 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"name": "getAnimFooter",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
 						"name": "tokenId",
 						"type": "string"
-					},
+					}
+				],
+				"name": "getAnimHeader",
+				"outputs": [
 					{
 						"internalType": "string",
-						"name": "color",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "hash",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "mood",
+						"name": "",
 						"type": "string"
 					}
 				],
-				"name": "getScript",
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getSVGforThumbnail",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -53,7 +64,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"InvertebratesEngine_2.sol": "InvertebratesEngine_2"
+			"InvertebratesEngine_1.sol": "ProzacYouthEngine_1"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -67,12 +78,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"InvertebratesEngine_2.sol": {
-			"keccak256": "0x64c578e24c0f2fa9460480b41c29f1be7ed11d2704271afa7c398bd5522aab00",
+		"InvertebratesEngine_1.sol": {
+			"keccak256": "0x1ef07610744b3964a5cbae62eb1c6bc7e5d5aec0f805c599d650c7ead4383a0a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://775a43270245426afab1d7be21216257d47156f63c4d09a41e12a8642e48c8f1",
-				"dweb:/ipfs/QmZisrTdx8aBRD3BQka3V2GirGE5mtH1mZUfczZMDH8aDK"
+				"bzz-raw://01285b4b04f4719555c396e252aeba83c155dfe3f2c6c62fe87265eba5fa8b19",
+				"dweb:/ipfs/QmZ1qpJ85FQHVZQL6LwYCBoGTfTjun5gXSxgxPECBRrXW8"
 			]
 		}
 	},
