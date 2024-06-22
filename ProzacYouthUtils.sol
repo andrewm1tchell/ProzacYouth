@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+//@developed by andrew mitchell (andrewmitchell.eth)
 contract ProzacYouthUtils {
     struct Entry {
         string hash;
@@ -40,6 +41,7 @@ contract ProzacYouthUtils {
         accessList[_address] = false;
     }
 
+    //Adds an entry to the blockchain
     function addEntry(
         string memory _hash,
         string memory _blockNumber,
@@ -50,6 +52,7 @@ contract ProzacYouthUtils {
         entries.push(Entry(_hash, _blockNumber, _timestamp, _text, _formattedTime));
     }
 
+    //Wraps the entries into table rows for injecting into the animation url's HTML.
     function getEntriesHTML() external view returns (string memory) {
         string memory html;
 
@@ -104,6 +107,10 @@ contract ProzacYouthUtils {
 
     function getMode() public view returns (string memory) {
         return keccak256(abi.encodePacked(mode)) == keccak256(abi.encodePacked("0")) ? "light" : "dark";
+    }
+
+    function getModeRaw() public view returns (string memory) {
+        return mode;
     }
 
      function setTjoUrl(string memory _tjoUrl) external onlyAuthorized {

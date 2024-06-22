@@ -11,11 +11,6 @@
 						"internalType": "string",
 						"name": "mode",
 						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "entriesHtml",
-						"type": "string"
 					}
 				],
 				"name": "getScript",
@@ -58,11 +53,11 @@
 	},
 	"sources": {
 		"ProzacYouthEngine_2.sol": {
-			"keccak256": "0xd48055aa050c726481d54aabc1102005cb276585c5629b2fbb52418ac21cb2e6",
+			"keccak256": "0xea91f9d10931a257ae132530b5eaaffdab4bfe2cb5c369088a1d84de7bc77f0f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4afeda6ff9a53226b1babf755e19e90fc373c888192102fa28b7d410f189ee1f",
-				"dweb:/ipfs/Qmbj584fXtHKBgCTzJLm4gHUGAAAQbHcgfjUju59QPxhve"
+				"bzz-raw://bf0f25c91f3f54e55fb210cfa9bd9ed2ee62e2a77675e10c4222c056415e795e",
+				"dweb:/ipfs/QmYg7HfBJhQJ5y8HBjyMWun4B8qFWFwsQJFX6bZqooo6ZU"
 			]
 		}
 	},

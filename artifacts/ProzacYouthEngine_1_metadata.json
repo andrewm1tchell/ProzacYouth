@@ -24,6 +24,11 @@
 						"internalType": "string",
 						"name": "andrewUrl",
 						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "entriesHtml",
+						"type": "string"
 					}
 				],
 				"name": "getAnimHeader",
@@ -66,11 +71,11 @@
 	},
 	"sources": {
 		"ProzacYouthEngine_1.sol": {
-			"keccak256": "0xc0120aa86e03ad3791204259bbf2b2c75fe8b7976a15ce6f85606c2254c8bfbb",
+			"keccak256": "0xfea960d26e1be866f71fd5028f1ce39c82072685a181852c5fa436ed84c132d3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f92e1fdca8e4e1f1f70418903c1e23c51677f522e71332a6937b8b76e57fff97",
-				"dweb:/ipfs/QmPRortsYgDtsDMrsV3Q3APr4pkrxHfVUsqVV13rFBzZVe"
+				"bzz-raw://ae9857b0ca4ddf65bf72a3c8c6ec9ab7fe9e7db91ec2150c609b423c12e71b66",
+				"dweb:/ipfs/QmcjdDu9QHjy85Yd74eKyvbAB4EgmCLkLkUGQtiPUKLVbB"
 			]
 		}
 	},

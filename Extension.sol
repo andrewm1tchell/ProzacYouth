@@ -128,7 +128,7 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
         ProzacYouthUtils1 = ProzacYouthUtils(ProzacYouthUtils_addr);
         _accessList[0xF1Da6E2d387e9DA611dAc8a7FC587Eaa4B010013] = true; // Adding default wallet to accessList
     }
-
+    
     function supportsInterface(bytes4 interfaceId) public view virtual override(AdminControl, CreatorExtension, IERC165) returns (bool) {
         return interfaceId == type(ICreatorExtensionTokenURI).interfaceId || interfaceId == type(IManifoldERC721Edition).interfaceId || interfaceId == type(AdminControl).interfaceId ||
                CreatorExtension.supportsInterface(interfaceId);
@@ -177,6 +177,11 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
         ProzacYouthEngine2 = ProzacYouthEngine_2(addr);
     }
 
+    function setProzacYouthUtils_1(address addr) public {
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
+        ProzacYouthUtils1 = ProzacYouthUtils(addr);
+    }
+
     function setDescription(string memory des) public {
         require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
         _description = des;
@@ -198,8 +203,8 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
 
     function formatTokenURI(uint256 tokenId) public view returns (string memory) {
         string memory _animURI = animToURI(string(abi.encodePacked(
-            ProzacYouthEngine1.getAnimHeader(ProzacYouthUtils1.getAndrewUrl()),
-            ProzacYouthEngine2.getScript(ProzacYouthUtils1.getMode(), ProzacYouthUtils1.getEntriesHTML()),
+            ProzacYouthEngine1.getAnimHeader(ProzacYouthUtils1.getAndrewUrl(), ProzacYouthUtils1.getEntriesHTML()),
+            ProzacYouthEngine2.getScript(ProzacYouthUtils1.getModeRaw()),
             ProzacYouthEngine1.getAnimFooter()
         )));
         string memory byteEncoded = Base64.encode(bytes(abi.encodePacked(

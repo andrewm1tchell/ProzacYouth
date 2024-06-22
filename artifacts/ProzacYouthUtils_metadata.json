@@ -155,6 +155,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "getModeRaw",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getTjoUrl",
 				"outputs": [
 					{
@@ -312,11 +325,11 @@
 	},
 	"sources": {
 		"ProzacYouthUtils.sol": {
-			"keccak256": "0xe7b8df297b26083c89f6ec9bf4351e92babfc9d2d57b1658394ecd8a0ac148ed",
+			"keccak256": "0xb0375b55f770abed9260d016bb37480e7bc1a7eb34b2d4c6151d80097b82028a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://50d3de668b1edeaba273faeb97eee5146cdcc9892be5b43988e5c516a4fdcfc1",
-				"dweb:/ipfs/QmciFun8FGVKvHFPAAaparHvbhWbAnytfsE6LMeAUAwAaS"
+				"bzz-raw://7a34dd5f25baf91130ac48e86e8bd89990cc03076184c2d4b347edf23f385d24",
+				"dweb:/ipfs/QmeL5VLCZfSqjZEXYQQEc3ozAQUKs5Nfx3GgGWiWebiPEK"
 			]
 		}
 	},
