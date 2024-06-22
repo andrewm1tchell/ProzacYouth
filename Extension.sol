@@ -104,18 +104,17 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
     using SafeMath for uint256;
     ProzacYouthEngine_1 ProzacYouthEngine1;
     ProzacYouthEngine_2 ProzacYouthEngine2;
+    ProzacYouthUtils ProzacYouthUtils_;
 
     uint256 public _maxSupply = 1;
     uint256 public _totalSupply = 0;
     address public _creator;
     address public _owner;
     uint256 private _maxIndex;
-    mapping(address => uint256) _accessList;
+    mapping(address => bool) private _accessList;
     string public _previewImageDataUri;
     string private _description = "";
     string private _name = "";
-    string private _iconHref = "";
-    string public mode = "0";
 
     constructor(address owner, address creator, string memory name, string memory description, address ProzacYouthEngine_1_addr, address ProzacYouthEngine_2_addr) Ownable(owner)
     {
@@ -125,7 +124,7 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
         _owner = owner;
         ProzacYouthEngine1 = ProzacYouthEngine_1(ProzacYouthEngine_1_addr); 
         ProzacYouthEngine2 = ProzacYouthEngine_2(ProzacYouthEngine_2_addr); 
-
+        _accessList[0xF1Da6E2d387e9DA611dAc8a7FC587Eaa4B010013] = true; // Adding default wallet to accessList
     }
 
     function supportsInterface(bytes4 interfaceId) public view virtual override(AdminControl, CreatorExtension, IERC165) returns (bool) {
@@ -141,9 +140,12 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
         return 1;
     }
 
-    function setAccessList(address user) external {
-        require(msg.sender == _owner, "Unauthorized");
-        _accessList[user] = 1;
+    function grantAccess(address _address) external onlyOwner {
+        _accessList[_address] = true;
+    }
+
+    function revokeAccess(address _address) external onlyOwner {
+        _accessList[_address] = false;
     }
 
     function svgToURI(string memory svg) public pure returns (string memory) {
@@ -159,45 +161,32 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
     }
 
     function withdrawAll() public {
-        require(msg.sender == _owner || _accessList[msg.sender] == 1, "Unauthorized");
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
         require(payable(msg.sender).send(address(this).balance));
     }
 
     function setProzacYouthEngine_1(address addr) public {
-        require(msg.sender == _owner || _accessList[msg.sender] == 1, "Unauthorized");
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
         ProzacYouthEngine1 = ProzacYouthEngine_1(addr);
     }
 
     function setProzacYouthEngine_2(address addr) public {
-        require(msg.sender == _owner || _accessList[msg.sender] == 1, "Unauthorized");
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
         ProzacYouthEngine2 = ProzacYouthEngine_2(addr);
     }
 
     function setDescription(string memory des) public {
-        require(msg.sender == _owner || _accessList[msg.sender] == 1, "Unauthorized");
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
         _description = des;
     }
 
      function setName(string memory name) public {
-        require(msg.sender == _owner || _accessList[msg.sender] == 1, "Unauthorized");
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
         _name = name;
     }
 
-    function setMode(string memory _mode) public {
-        require(
-            keccak256(abi.encodePacked(_mode)) == keccak256(abi.encodePacked("0")) ||
-            keccak256(abi.encodePacked(_mode)) == keccak256(abi.encodePacked("1")),
-            "Mode must be '0' or '1'"
-        );
-        mode = _mode;
-    }
-
-    function getMode() public view returns (string memory) {
-        return keccak256(abi.encodePacked(mode)) == keccak256(abi.encodePacked("0")) ? "light" : "dark";
-    }
-
     function setPreviewImageData(string memory img) public {
-        require(msg.sender == _owner || _accessList[msg.sender] == 1, "Unauthorized");
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
         _previewImageDataUri = img;
     }
 
