@@ -19,13 +19,7 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "iconHref",
-						"type": "string"
-					}
-				],
+				"inputs": [],
 				"name": "getAnimHeader",
 				"outputs": [
 					{
@@ -34,7 +28,7 @@
 						"type": "string"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -66,11 +60,11 @@
 	},
 	"sources": {
 		"ProzacYouthEngine_1.sol": {
-			"keccak256": "0xf8744c5803aa3b9a12dceff59adcec60520276bd5299d0d567c1a298173bc181",
+			"keccak256": "0xe6a2284c9eb85b83314165569dbf5f22d2ab69cc165a6b6fbf13b10d8e5945ed",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d6a88ae58e0e0984528602dcff3b61e6940697f1255d9021af3f3f8bb7f961a6",
-				"dweb:/ipfs/QmZJLpJggmGtHbNk7GGXz1wtCu7KXDUtdkLW69BpWTfqQL"
+				"bzz-raw://d2e92f8ca2596a860847caafc20a253231eb0a7e252e1a73068ae636de60902c",
+				"dweb:/ipfs/QmR5YYwK4o52fU6JBe7RasvieoqScL13qAuroAv26tSaQQ"
 			]
 		}
 	},

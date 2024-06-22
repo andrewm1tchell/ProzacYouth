@@ -158,11 +158,11 @@
 			]
 		},
 		"Extension.sol": {
-			"keccak256": "0xb4b4302d874b2b22dc57d2138a970fe1b20f50da0c0a5da45ffc7e999f0f1944",
+			"keccak256": "0x430c5aa8d67d9c99b64064bba8c0c035f2beaba19b0162d1f4a7ca50640fefb7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2ccc5181929bae9b8734541d4baa55c4e97e950c3181975b621a196f6a6430a8",
-				"dweb:/ipfs/QmQ37qdEWQP8piY7kGvYXPhVUb6J1ddRTJcgb7o15tNmia"
+				"bzz-raw://17d5efb0a9d82b8c0a733b3a1e144f6cc266c7dc86395754255df753c3db4dff",
+				"dweb:/ipfs/QmYttBvDFHEkmsUEZ2yUzgHoX94oJ9YsqD1Qs8V54LithJ"
 			]
 		},
 		"IManifoldERC721Edition.sol": {
@@ -174,19 +174,19 @@
 			]
 		},
 		"ProzacYouthEngine_1.sol": {
-			"keccak256": "0x364d281823c7abc8b9450620fd08998fb667722078591059aea60c04e3995ef7",
+			"keccak256": "0xe6a2284c9eb85b83314165569dbf5f22d2ab69cc165a6b6fbf13b10d8e5945ed",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ab49f84f3a38e69d9ab3de8249e7f520a22939c3b6375dee4b79541899815474",
-				"dweb:/ipfs/QmZFSPMjPkP6cHkZWCzAZMnx2oCg4wJQ2WqCgssGQq5aPF"
+				"bzz-raw://d2e92f8ca2596a860847caafc20a253231eb0a7e252e1a73068ae636de60902c",
+				"dweb:/ipfs/QmR5YYwK4o52fU6JBe7RasvieoqScL13qAuroAv26tSaQQ"
 			]
 		},
 		"ProzacYouthEngine_2.sol": {
-			"keccak256": "0x7ce2e6fe2198514fa43f406b3dc61951b088853e7c31ccbb925aad3d4b3a64b2",
+			"keccak256": "0xa49555551e2980adbed444d578f072c0b42801fe3f3336fb5b7425d8f51e28d6",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8149a7a0bc364ce70818159d16068040c81202427c0a819dea1a9f5a79bfceec",
-				"dweb:/ipfs/QmZLAgZWqUYJhhnpDAoFFn9JBEBT9umRyf3AzfUGYYiHkX"
+				"bzz-raw://50b6f92d9fd7deff60c5d238c2be3375b68cf19622b449074f393b35a7b8038c",
+				"dweb:/ipfs/QmPX1MeSS5vGzHwA9WpgCMbzAdqDaBk4Z2JKcTwFaZjBA6"
 			]
 		}
 	},

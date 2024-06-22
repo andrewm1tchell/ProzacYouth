@@ -6,7 +6,13 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "mode",
+						"type": "string"
+					}
+				],
 				"name": "getScript",
 				"outputs": [
 					{
@@ -15,7 +21,7 @@
 						"type": "string"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -47,11 +53,11 @@
 	},
 	"sources": {
 		"ProzacYouthEngine_2.sol": {
-			"keccak256": "0x7ce2e6fe2198514fa43f406b3dc61951b088853e7c31ccbb925aad3d4b3a64b2",
+			"keccak256": "0x68b8899ce768e1debe3261c0bb9fafd439154f6048233d46d054c6b1d06c5b07",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8149a7a0bc364ce70818159d16068040c81202427c0a819dea1a9f5a79bfceec",
-				"dweb:/ipfs/QmZLAgZWqUYJhhnpDAoFFn9JBEBT9umRyf3AzfUGYYiHkX"
+				"bzz-raw://0e4c6a6ebbac4ff503d924812ee836a106ae98341b3fd1abc2ae8b8714aa3199",
+				"dweb:/ipfs/QmerPjf4YHPXK97zbYPzgGdDnqseWkXGVWuQS4jEf7WbYG"
 			]
 		}
 	},

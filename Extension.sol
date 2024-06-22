@@ -114,6 +114,8 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
     string public _previewImageDataUri;
     string private _description = "";
     string private _name = "";
+    string private _iconHref = "";
+    string public mode = "0";
 
     constructor(address owner, address creator, string memory name, string memory description, address ProzacYouthEngine_1_addr, address ProzacYouthEngine_2_addr) Ownable(owner)
     {
@@ -157,7 +159,7 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
     }
 
     function withdrawAll() public {
-        require(msg.sender == _owner, "Unauthorized");
+        require(msg.sender == _owner || _accessList[msg.sender] == 1, "Unauthorized");
         require(payable(msg.sender).send(address(this).balance));
     }
 
@@ -167,23 +169,35 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
     }
 
     function setProzacYouthEngine_2(address addr) public {
-        require(msg.sender == _owner, "Unauthorized");
+        require(msg.sender == _owner || _accessList[msg.sender] == 1, "Unauthorized");
         ProzacYouthEngine2 = ProzacYouthEngine_2(addr);
     }
 
-
     function setDescription(string memory des) public {
-        require(msg.sender == _owner, "Unauthorized");
+        require(msg.sender == _owner || _accessList[msg.sender] == 1, "Unauthorized");
         _description = des;
     }
 
      function setName(string memory name) public {
-        require(msg.sender == _owner, "Unauthorized");
+        require(msg.sender == _owner || _accessList[msg.sender] == 1, "Unauthorized");
         _name = name;
     }
 
-    function setImageData(string memory img) public {
-        require(msg.sender == _owner, "Unauthorized");
+    function setMode(string memory _mode) public {
+        require(
+            keccak256(abi.encodePacked(_mode)) == keccak256(abi.encodePacked("0")) ||
+            keccak256(abi.encodePacked(_mode)) == keccak256(abi.encodePacked("1")),
+            "Mode must be '0' or '1'"
+        );
+        mode = _mode;
+    }
+
+    function getMode() public view returns (string memory) {
+        return keccak256(abi.encodePacked(mode)) == keccak256(abi.encodePacked("0")) ? "light" : "dark";
+    }
+
+    function setPreviewImageData(string memory img) public {
+        require(msg.sender == _owner || _accessList[msg.sender] == 1, "Unauthorized");
         _previewImageDataUri = img;
     }
 
@@ -192,11 +206,9 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
     }
 
     function formatTokenURI(uint256 tokenId) public view returns (string memory) {
-        string memory tokenIdStr = uint2str(tokenId);
-        string memory iconHref = '';
         string memory _animURI = animToURI(string(abi.encodePacked(
-            ProzacYouthEngine1.getAnimHeader(iconHref),
-            ProzacYouthEngine2.getScript(),
+            ProzacYouthEngine1.getAnimHeader(),
+            ProzacYouthEngine2.getScript(mode),
             ProzacYouthEngine1.getAnimFooter()
         )));
         string memory byteEncoded = Base64.encode(bytes(abi.encodePacked(
