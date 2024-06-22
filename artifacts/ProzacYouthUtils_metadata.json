@@ -103,6 +103,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "getAndrewUrl",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getEntriesHTML",
 				"outputs": [
 					{
@@ -116,7 +129,33 @@
 			},
 			{
 				"inputs": [],
+				"name": "getEtherscanUrl",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getMode",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTjoUrl",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -273,11 +312,11 @@
 	},
 	"sources": {
 		"ProzacYouthUtils.sol": {
-			"keccak256": "0x7f5bc1624751f812cb67233b7aa4181c455112b506d3e7b64c83d2871e704f59",
+			"keccak256": "0xe7b8df297b26083c89f6ec9bf4351e92babfc9d2d57b1658394ecd8a0ac148ed",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f02a55fd7c2c9bf5650d8fc07eb23b82c9969ea6a5354600d0aa59f1f1ceaebd",
-				"dweb:/ipfs/QmYmQj8DKc5y13BmuPDqoshgXYieDvxMKAh1P3gX9BqkDM"
+				"bzz-raw://50d3de668b1edeaba273faeb97eee5146cdcc9892be5b43988e5c516a4fdcfc1",
+				"dweb:/ipfs/QmciFun8FGVKvHFPAAaparHvbhWbAnytfsE6LMeAUAwAaS"
 			]
 		}
 	},

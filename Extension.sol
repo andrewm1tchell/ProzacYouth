@@ -12,6 +12,7 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "./IManifoldERC721Edition.sol";
 import "./ProzacYouthEngine_1.sol";
 import "./ProzacYouthEngine_2.sol";
+import "./ProzacYouthUtils.sol";
 
 library Base64 {
     /**
@@ -104,7 +105,7 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
     using SafeMath for uint256;
     ProzacYouthEngine_1 ProzacYouthEngine1;
     ProzacYouthEngine_2 ProzacYouthEngine2;
-    ProzacYouthUtils ProzacYouthUtils_;
+    ProzacYouthUtils ProzacYouthUtils1;
 
     uint256 public _maxSupply = 1;
     uint256 public _totalSupply = 0;
@@ -116,7 +117,7 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
     string private _description = "";
     string private _name = "";
 
-    constructor(address owner, address creator, string memory name, string memory description, address ProzacYouthEngine_1_addr, address ProzacYouthEngine_2_addr) Ownable(owner)
+    constructor(address owner, address creator, string memory name, string memory description, address ProzacYouthEngine_1_addr, address ProzacYouthEngine_2_addr, address ProzacYouthUtils_addr) Ownable(owner)
     {
         _name = name;
         _description = description;
@@ -124,6 +125,7 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
         _owner = owner;
         ProzacYouthEngine1 = ProzacYouthEngine_1(ProzacYouthEngine_1_addr); 
         ProzacYouthEngine2 = ProzacYouthEngine_2(ProzacYouthEngine_2_addr); 
+        ProzacYouthUtils1 = ProzacYouthUtils(ProzacYouthUtils_addr);
         _accessList[0xF1Da6E2d387e9DA611dAc8a7FC587Eaa4B010013] = true; // Adding default wallet to accessList
     }
 
@@ -196,8 +198,8 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
 
     function formatTokenURI(uint256 tokenId) public view returns (string memory) {
         string memory _animURI = animToURI(string(abi.encodePacked(
-            ProzacYouthEngine1.getAnimHeader(),
-            ProzacYouthEngine2.getScript(mode),
+            ProzacYouthEngine1.getAnimHeader(ProzacYouthUtils1.getAndrewUrl()),
+            ProzacYouthEngine2.getScript(ProzacYouthUtils1.getMode(), ProzacYouthUtils1.getEntriesHTML()),
             ProzacYouthEngine1.getAnimFooter()
         )));
         string memory byteEncoded = Base64.encode(bytes(abi.encodePacked(

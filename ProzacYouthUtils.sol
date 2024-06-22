@@ -50,18 +50,6 @@ contract ProzacYouthUtils {
         entries.push(Entry(_hash, _blockNumber, _timestamp, _text, _formattedTime));
     }
 
-    function setTjoUrl(string memory _tjoUrl) external onlyAuthorized {
-        tjoUrl = _tjoUrl;
-    }
-
-    function setEtherscanUrl(string memory _etherscanUrl) external onlyAuthorized {
-        etherscanUrl = _etherscanUrl;
-    }
-
-    function setAndrewUrl(string memory _andrewUrl) external onlyAuthorized {
-        andrewUrl = _andrewUrl;
-    }
-
     function getEntriesHTML() external view returns (string memory) {
         string memory html;
 
@@ -118,4 +106,27 @@ contract ProzacYouthUtils {
         return keccak256(abi.encodePacked(mode)) == keccak256(abi.encodePacked("0")) ? "light" : "dark";
     }
 
+     function setTjoUrl(string memory _tjoUrl) external onlyAuthorized {
+        tjoUrl = _tjoUrl;
+    }
+
+    function setEtherscanUrl(string memory _etherscanUrl) external onlyAuthorized {
+        etherscanUrl = _etherscanUrl;
+    }
+
+    function setAndrewUrl(string memory _andrewUrl) external onlyAuthorized {
+        andrewUrl = _andrewUrl;
+    }
+
+      function getTjoUrl() external view returns (string memory) {
+        return tjoUrl;
+    }
+
+    function getEtherscanUrl() external view returns (string memory) {
+        return etherscanUrl;
+    }
+
+    function getAndrewUrl() external view returns (string memory) {
+        return andrewUrl;
+    }
 }
