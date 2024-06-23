@@ -64,10 +64,6 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
         _accessList[_address] = false;
     }
 
-    function svgToURI(string memory svg) public pure returns (string memory) {
-        return string(abi.encodePacked("data:image/svg+xml;base64,", Base64.encode(bytes(svg))));
-    }
-
     function mint(address recipient) external payable {
         require(msg.sender == _owner, "Unauthorized");
         require(_totalSupply < 1, "No more tokens left");
@@ -192,6 +188,8 @@ library Base64 {
     string internal constant _TABLE = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
     /**
+     * @dev Shoutout to @chainleft's Chaos Roads implementation for this code.
+     * Chaos Roads: https://etherscan.io/address/0x18adc812fe66b9381700c2217f0c9dc816c879e6
      * @dev Converts a `bytes` to its Bytes64 `string` representation.
      */
     function encode(bytes memory data) internal pure returns (string memory) {

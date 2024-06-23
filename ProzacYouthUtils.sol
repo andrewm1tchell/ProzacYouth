@@ -145,7 +145,7 @@ contract ProzacYouthUtils {
                 "<a class=\"light-link\" style=\"font-size:12px;\" href=\"",
                 etherscanUrl,
                 entries[i].hash,
-                "\" target=\"_blank\" title=\"Link to this transaction\" onclick=\"cleanAndOpen(event)\">",
+                "\" target=\"_blank\" title=\"Link to this transaction\">",
                 entries[i].formattedTime,
                 "</a></span></div></td></tr>",
                 "<tr><td colspan=\"1\" valign=\"middle\" align=\"left\" class=\"light-bg\">",

@@ -1,6 +1,6 @@
 {
   "name": "ProzacYouthUtils",
-  "address": "0x468e799289480f76fe27a34e1efc6057d231ead5",
+  "address": "0xb9f30089d0ab4a41d866b1abbe737b3efa4e4d32",
   "abi": [
     {
       "inputs": [
@@ -359,5 +359,5 @@
     }
   ],
   "filePath": "DefaultExtensionWorkspace1/ProzacYouthUtils.sol",
-  "pinnedAt": 1719109090036
+  "pinnedAt": 1719111151086
 }
