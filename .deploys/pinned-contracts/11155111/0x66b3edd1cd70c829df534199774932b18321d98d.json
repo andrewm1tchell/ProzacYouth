@@ -1,6 +1,6 @@
 {
   "name": "ProzacYouth",
-  "address": "0x77a8d6cfbb5f9ba42ef3613b3ec11eed95e0dd94",
+  "address": "0x66b3edd1cd70c829df534199774932b18321d98d",
   "abi": [
     {
       "inputs": [
@@ -496,25 +496,6 @@
     {
       "inputs": [
         {
-          "internalType": "string",
-          "name": "svg",
-          "type": "string"
-        }
-      ],
-      "name": "svgToURI",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "pure",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
           "internalType": "address",
           "name": "creator",
           "type": "address"
@@ -570,5 +551,5 @@
     }
   ],
   "filePath": "DefaultExtensionWorkspace1/Extension.sol",
-  "pinnedAt": 1719109094077
+  "pinnedAt": 1719114708615
 }
