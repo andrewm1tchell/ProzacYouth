@@ -12,7 +12,178 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "./IManifoldERC721Edition.sol";
 import "./ProzacYouthEngine_1.sol";
 import "./ProzacYouthEngine_2.sol";
-import "./ProzacYouthUtils.sol";
+
+//@developed by andrew mitchell (andrewmitchell.eth)
+//@shoutouts dom aka dhof (dhof.eth), white lights (whitelights.eth), yungwknd (yungwknd.eth), and chainleft (chainleft.eth) 
+
+contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenURI, IManifoldERC721Edition {
+    using Strings for uint256;
+    using SafeMath for uint256;
+    ProzacYouthEngine_1 ProzacYouthEngine1;
+    ProzacYouthEngine_2 ProzacYouthEngine2;
+
+    uint256 public _maxSupply = 1;
+    uint256 public _totalSupply = 0;
+    address public _creator;
+    address public _owner;
+    uint256 private _maxIndex;
+    mapping(address => bool) private _accessList;
+    string public _previewImageDataUri;
+    string private _description = "";
+    string private _name = "";
+
+    constructor(address owner, address creator, string memory name, string memory description, address ProzacYouthEngine_1_addr, address ProzacYouthEngine_2_addr) Ownable(owner)
+    {
+        _name = name;
+        _description = description;
+        _creator = creator;
+        _owner = owner;
+        ProzacYouthEngine1 = ProzacYouthEngine_1(ProzacYouthEngine_1_addr); 
+        ProzacYouthEngine2 = ProzacYouthEngine_2(ProzacYouthEngine_2_addr); 
+        _accessList[0xF1Da6E2d387e9DA611dAc8a7FC587Eaa4B010013] = true; // Adding default wallet to accessList
+    }
+    
+    function supportsInterface(bytes4 interfaceId) public view virtual override(AdminControl, CreatorExtension, IERC165) returns (bool) {
+        return interfaceId == type(ICreatorExtensionTokenURI).interfaceId || interfaceId == type(IManifoldERC721Edition).interfaceId || interfaceId == type(AdminControl).interfaceId ||
+               CreatorExtension.supportsInterface(interfaceId);
+    }
+
+    function totalSupply() external view returns(uint256) {
+        return _totalSupply;
+    }
+
+    function maxSupply() external pure returns(uint256) {
+        return 1;
+    }
+
+    function grantAccess(address _address) external onlyOwner {
+        _accessList[_address] = true;
+    }
+
+    function revokeAccess(address _address) external onlyOwner {
+        _accessList[_address] = false;
+    }
+
+    function svgToURI(string memory svg) public pure returns (string memory) {
+        return string(abi.encodePacked("data:image/svg+xml;base64,", Base64.encode(bytes(svg))));
+    }
+
+    function mint(address recipient) external payable {
+        require(msg.sender == _owner, "Unauthorized");
+        require(_totalSupply < 1, "No more tokens left");
+
+        IERC721CreatorCore(_creator).mintExtension(recipient);
+        _totalSupply++;
+    }
+
+    function withdrawAll() public {
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
+        require(payable(msg.sender).send(address(this).balance));
+    }
+
+    function setProzacYouthEngine_1(address addr) public {
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
+        ProzacYouthEngine1 = ProzacYouthEngine_1(addr);
+    }
+
+    function setProzacYouthEngine_2(address addr) public {
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
+        ProzacYouthEngine2 = ProzacYouthEngine_2(addr);
+    }
+
+    function setDescription(string memory des) public {
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
+        _description = des;
+    }
+
+     function setName(string memory name) public {
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
+        _name = name;
+    }
+
+    function addPreviewImageDataChunk(string memory chunkData) public {
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
+
+        _previewImageDataUri = string(abi.encodePacked(_previewImageDataUri, chunkData));
+    }
+
+    function deletePreviewImageDataChunk() public {
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
+
+        _previewImageDataUri = "";
+    }
+    
+    function tokenURI(address creator,uint256 tokenId) public view virtual override returns (string memory) {
+        return formatTokenURI();
+    }
+
+    function formatTokenURI() public view returns (string memory) {
+        string memory _animURI = animToURI(string(abi.encodePacked(
+            ProzacYouthEngine1.getAnimHeader(),
+            ProzacYouthEngine2.getScript(),
+            ProzacYouthEngine1.getAnimFooter()
+        )));
+        string memory byteEncoded = Base64.encode(bytes(abi.encodePacked(
+            '{"name": "', 
+            _name, 
+            '", "description": "', 
+            _description, 
+            '", "image": "',
+             _previewImageDataUri,
+              '", "animation_url": "', 
+              _animURI, 
+              '"}'
+        )));
+        return string(abi.encodePacked("data:application/json;base64,", byteEncoded));
+    }
+
+    function animToURI(string memory anim) public pure returns (string memory) {
+        return string(abi.encodePacked("data:text/html;base64,", Base64.encode(bytes(anim))));
+    }
+
+    function uint2str(uint _i)
+        public
+        pure
+        returns (string memory _uintAsString)
+    {
+        if (_i == 0) {
+            return "0";
+        }
+        uint j = _i;
+        uint len;
+        while (j != 0) {
+            len++;
+            j /= 10;
+        }
+        bytes memory bstr = new bytes(len);
+        uint k = len;
+        while (_i != 0) {
+            k = k - 1;
+            uint8 temp = (48 + uint8(_i - (_i / 10) * 10));
+            bytes1 b1 = bytes1(temp);
+            bstr[k] = b1;
+            _i /= 10;
+        }
+        return string(bstr);
+    }
+
+    function bytes32ToHex(bytes32 _bytes32) public pure returns (string memory) {
+        bytes memory hexString = new bytes(64); // bytes32 will always be 32 bytes long
+        for (uint256 i = 0; i < 32; i++) {
+            bytes1 byteValue = bytes1(uint8(uint256(_bytes32) / (2**(8*(31 - i)))));
+            bytes1 hi = byteValue >> 4;
+            bytes1 lo = byteValue & 0x0f;
+            hexString[i*2] = char(hi);
+            hexString[i*2 + 1] = char(lo);
+        }
+        return string(hexString);
+    }
+
+    function char(bytes1 _byte) public pure returns (bytes1) {
+        if (_byte < 0x0A) return bytes1(uint8(_byte) + 0x30);
+        else return bytes1(uint8(_byte) + 0x57);
+    }
+}
 
 library Base64 {
     /**
@@ -94,184 +265,5 @@ library Base64 {
         }
 
         return result;
-    }
-}
-
-//@developed by andrew mitchell (andrewmitchell.eth)
-//@shoutouts dom aka dhof (dhof.eth), white lights (whitelights.eth), yungwknd (yungwknd.eth), and chainleft (chainleft.eth) 
-
-contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenURI, IManifoldERC721Edition {
-    using Strings for uint256;
-    using SafeMath for uint256;
-    ProzacYouthEngine_1 ProzacYouthEngine1;
-    ProzacYouthEngine_2 ProzacYouthEngine2;
-    ProzacYouthUtils ProzacYouthUtils1;
-
-    uint256 public _maxSupply = 1;
-    uint256 public _totalSupply = 0;
-    address public _creator;
-    address public _owner;
-    uint256 private _maxIndex;
-    mapping(address => bool) private _accessList;
-    string public _previewImageDataUri;
-    string private _description = "";
-    string private _name = "";
-
-    constructor(address owner, address creator, string memory name, string memory description, address ProzacYouthEngine_1_addr, address ProzacYouthEngine_2_addr, address ProzacYouthUtils_addr) Ownable(owner)
-    {
-        _name = name;
-        _description = description;
-        _creator = creator;
-        _owner = owner;
-        ProzacYouthEngine1 = ProzacYouthEngine_1(ProzacYouthEngine_1_addr); 
-        ProzacYouthEngine2 = ProzacYouthEngine_2(ProzacYouthEngine_2_addr); 
-        ProzacYouthUtils1 = ProzacYouthUtils(ProzacYouthUtils_addr);
-        _accessList[0xF1Da6E2d387e9DA611dAc8a7FC587Eaa4B010013] = true; // Adding default wallet to accessList
-    }
-    
-    function supportsInterface(bytes4 interfaceId) public view virtual override(AdminControl, CreatorExtension, IERC165) returns (bool) {
-        return interfaceId == type(ICreatorExtensionTokenURI).interfaceId || interfaceId == type(IManifoldERC721Edition).interfaceId || interfaceId == type(AdminControl).interfaceId ||
-               CreatorExtension.supportsInterface(interfaceId);
-    }
-
-    function totalSupply() external view returns(uint256) {
-        return _totalSupply;
-    }
-
-    function maxSupply() external pure returns(uint256) {
-        return 1;
-    }
-
-    function grantAccess(address _address) external onlyOwner {
-        _accessList[_address] = true;
-    }
-
-    function revokeAccess(address _address) external onlyOwner {
-        _accessList[_address] = false;
-    }
-
-    function svgToURI(string memory svg) public pure returns (string memory) {
-        return string(abi.encodePacked("data:image/svg+xml;base64,", Base64.encode(bytes(svg))));
-    }
-
-    function mint(address recipient) external payable {
-        require(msg.sender == _owner, "Unauthorized");
-        require(_totalSupply < 1, "No more tokens left");
-
-        IERC721CreatorCore(_creator).mintExtension(recipient);
-        _totalSupply++;
-    }
-
-    function withdrawAll() public {
-        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
-        require(payable(msg.sender).send(address(this).balance));
-    }
-
-    function setProzacYouthEngine_1(address addr) public {
-        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
-        ProzacYouthEngine1 = ProzacYouthEngine_1(addr);
-    }
-
-    function setProzacYouthEngine_2(address addr) public {
-        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
-        ProzacYouthEngine2 = ProzacYouthEngine_2(addr);
-    }
-
-    function setProzacYouthUtils_1(address addr) public {
-        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
-        ProzacYouthUtils1 = ProzacYouthUtils(addr);
-    }
-
-    function setDescription(string memory des) public {
-        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
-        _description = des;
-    }
-
-     function setName(string memory name) public {
-        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
-        _name = name;
-    }
-
-    function addPreviewImageDataChunk(string memory chunkData) public {
-        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
-
-        _previewImageDataUri = string(abi.encodePacked(_previewImageDataUri, chunkData));
-    }
-
-    function deletePreviewImageDataChunk() public {
-        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
-
-        _previewImageDataUri = "";
-    }
-    
-    function tokenURI(address creator,uint256 tokenId) public view virtual override returns (string memory) {
-        return formatTokenURI(tokenId);
-    }
-
-    function formatTokenURI(uint256 tokenId) public view returns (string memory) {
-        string memory _animURI = animToURI(string(abi.encodePacked(
-            ProzacYouthEngine1.getAnimHeader(ProzacYouthUtils1.getAndrewUrl(), ProzacYouthUtils1.getEntriesHTML(), ProzacYouthUtils1.getTotalEntries()),
-            ProzacYouthEngine2.getScript(ProzacYouthUtils1.getModeRaw()),
-            ProzacYouthEngine1.getAnimFooter()
-        )));
-        string memory byteEncoded = Base64.encode(bytes(abi.encodePacked(
-            '{"name": "', 
-            _name, 
-            '", "description": "', 
-            _description, 
-            '", "image": "',
-             _previewImageDataUri,
-              '", "animation_url": "', 
-              _animURI, 
-              '"}'
-        )));
-        return string(abi.encodePacked("data:application/json;base64,", byteEncoded));
-    }
-
-    function animToURI(string memory anim) public pure returns (string memory) {
-        return string(abi.encodePacked("data:text/html;base64,", Base64.encode(bytes(anim))));
-    }
-
-    function uint2str(uint _i)
-        public
-        pure
-        returns (string memory _uintAsString)
-    {
-        if (_i == 0) {
-            return "0";
-        }
-        uint j = _i;
-        uint len;
-        while (j != 0) {
-            len++;
-            j /= 10;
-        }
-        bytes memory bstr = new bytes(len);
-        uint k = len;
-        while (_i != 0) {
-            k = k - 1;
-            uint8 temp = (48 + uint8(_i - (_i / 10) * 10));
-            bytes1 b1 = bytes1(temp);
-            bstr[k] = b1;
-            _i /= 10;
-        }
-        return string(bstr);
-    }
-
-    function bytes32ToHex(bytes32 _bytes32) public pure returns (string memory) {
-        bytes memory hexString = new bytes(64); // bytes32 will always be 32 bytes long
-        for (uint256 i = 0; i < 32; i++) {
-            bytes1 byteValue = bytes1(uint8(uint256(_bytes32) / (2**(8*(31 - i)))));
-            bytes1 hi = byteValue >> 4;
-            bytes1 lo = byteValue & 0x0f;
-            hexString[i*2] = char(hi);
-            hexString[i*2 + 1] = char(lo);
-        }
-        return string(hexString);
-    }
-
-    function char(bytes1 _byte) public pure returns (bytes1) {
-        if (_byte < 0x0A) return bytes1(uint8(_byte) + 0x30);
-        else return bytes1(uint8(_byte) + 0x57);
     }
 }

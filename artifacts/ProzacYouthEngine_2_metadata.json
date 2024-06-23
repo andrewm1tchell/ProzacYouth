@@ -8,11 +8,35 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "mode",
-						"type": "string"
+						"internalType": "address",
+						"name": "ProzacYouthUtils_addr",
+						"type": "address"
 					}
 				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "accessList",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getScript",
 				"outputs": [
 					{
@@ -21,7 +45,59 @@
 						"type": "string"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "grantAccess",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "revokeAccess",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "setProzacYouthUtils_1",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -53,11 +129,19 @@
 	},
 	"sources": {
 		"ProzacYouthEngine_2.sol": {
-			"keccak256": "0xea91f9d10931a257ae132530b5eaaffdab4bfe2cb5c369088a1d84de7bc77f0f",
+			"keccak256": "0xd9f15fdea41d71640b359d9a34569139976eca73fb5148ceca10a11138583695",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://bf0f25c91f3f54e55fb210cfa9bd9ed2ee62e2a77675e10c4222c056415e795e",
-				"dweb:/ipfs/QmYg7HfBJhQJ5y8HBjyMWun4B8qFWFwsQJFX6bZqooo6ZU"
+				"bzz-raw://47eaf08416d1c4fc5fa246ce9fa7563200ec3a8a578ac70e4fc340e82449d59e",
+				"dweb:/ipfs/QmQC33wcsijpWHKSEv9ZCfcwxzxAPv1gpU8EWape47g1Tq"
+			]
+		},
+		"ProzacYouthUtils.sol": {
+			"keccak256": "0xf2e1d7b4f3dec837145984b42281700cbd9d347806ab524e0aebbe8f75796b41",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://63611493f258bb6eeb1e6c6c854ca469698aef8c953b790c7bfac3acf0c83262",
+				"dweb:/ipfs/QmQTF3xiAGwr7oBxqyp7PneRpd6pQpSjhfMtxrCVstnBfe"
 			]
 		}
 	},

@@ -33,6 +33,19 @@
 				"inputs": [
 					{
 						"internalType": "string",
+						"name": "entriesStr",
+						"type": "string"
+					}
+				],
+				"name": "addEntries",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
 						"name": "_hash",
 						"type": "string"
 					},
@@ -63,8 +76,14 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "clearEntries",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "batchSize",
+						"type": "uint256"
+					}
+				],
+				"name": "clearEntriesBatch",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -302,6 +321,44 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "newHash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "newBlockNumber",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "newTimestamp",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "newText",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "newFormattedTime",
+						"type": "string"
+					}
+				],
+				"name": "updateEntry",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -332,11 +389,11 @@
 	},
 	"sources": {
 		"ProzacYouthUtils.sol": {
-			"keccak256": "0x34fee70c40d020b4b1890a95bf13a33a89141975eb2d59586ac19855dd764042",
+			"keccak256": "0xf2e1d7b4f3dec837145984b42281700cbd9d347806ab524e0aebbe8f75796b41",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://26fbabf0b47c21f2e4cf17a21a31a6dea513a5bbff81e9cd7855f7f6e888805e",
-				"dweb:/ipfs/QmRtoedWkYDxmdEq4SkQgJ59SN3jcyWkcKidSkKdpM5HLw"
+				"bzz-raw://63611493f258bb6eeb1e6c6c854ca469698aef8c953b790c7bfac3acf0c83262",
+				"dweb:/ipfs/QmQTF3xiAGwr7oBxqyp7PneRpd6pQpSjhfMtxrCVstnBfe"
 			]
 		}
 	},

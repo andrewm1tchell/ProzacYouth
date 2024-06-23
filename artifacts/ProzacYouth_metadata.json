@@ -194,6 +194,19 @@
 				"inputs": [
 					{
 						"internalType": "string",
+						"name": "chunkData",
+						"type": "string"
+					}
+				],
+				"name": "addPreviewImageDataChunk",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
 						"name": "anim",
 						"type": "string"
 					}
@@ -258,6 +271,13 @@
 					}
 				],
 				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "deletePreviewImageDataChunk",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -418,19 +438,6 @@
 					}
 				],
 				"name": "setName",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "img",
-						"type": "string"
-					}
-				],
-				"name": "setPreviewImageData",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -784,11 +791,11 @@
 			]
 		},
 		"Extension.sol": {
-			"keccak256": "0xba848e4be347b210941657e367a66e0e00f1f932bcadada752bfa5a98ea8f65d",
+			"keccak256": "0x46074880c994008580f6836d40980bbecb1b8ec60e338a9ea9d19eb3efc6fe35",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4b68619e94101f54820f40e28150811489edc317653ffa18b2a2fae9c3fd38b2",
-				"dweb:/ipfs/QmfEj9QyPQt8VTGk2Ck1AbGNVpxqfAdwXFgFc2v7K1tfE8"
+				"bzz-raw://3c1dc80c7f9c22568e88a9a125d99787d0cf62d8105b24921fba3a3a2a109f5b",
+				"dweb:/ipfs/QmZNayDXt8J5znHr2438tsQ1HkNWZiu4AB51jfS8oLJy6Y"
 			]
 		},
 		"IManifoldERC721Edition.sol": {
@@ -800,11 +807,11 @@
 			]
 		},
 		"ProzacYouthEngine_1.sol": {
-			"keccak256": "0xfea960d26e1be866f71fd5028f1ce39c82072685a181852c5fa436ed84c132d3",
+			"keccak256": "0x4082638cb944a390ded014e34958ee8b77c0a00c04cb092e9ed04859bfaf3b95",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ae9857b0ca4ddf65bf72a3c8c6ec9ab7fe9e7db91ec2150c609b423c12e71b66",
-				"dweb:/ipfs/QmcjdDu9QHjy85Yd74eKyvbAB4EgmCLkLkUGQtiPUKLVbB"
+				"bzz-raw://58cf59880996bf8c78b317b13cd6b41dac7d524e67f0391cd9453b0c8673d57b",
+				"dweb:/ipfs/QmbEP1YCvnoaJYjWEPSCMumJ1m896qJc821g86RLAzge7r"
 			]
 		},
 		"ProzacYouthEngine_2.sol": {
@@ -816,11 +823,11 @@
 			]
 		},
 		"ProzacYouthUtils.sol": {
-			"keccak256": "0xb0375b55f770abed9260d016bb37480e7bc1a7eb34b2d4c6151d80097b82028a",
+			"keccak256": "0x34fee70c40d020b4b1890a95bf13a33a89141975eb2d59586ac19855dd764042",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7a34dd5f25baf91130ac48e86e8bd89990cc03076184c2d4b347edf23f385d24",
-				"dweb:/ipfs/QmeL5VLCZfSqjZEXYQQEc3ozAQUKs5Nfx3GgGWiWebiPEK"
+				"bzz-raw://26fbabf0b47c21f2e4cf17a21a31a6dea513a5bbff81e9cd7855f7f6e888805e",
+				"dweb:/ipfs/QmRtoedWkYDxmdEq4SkQgJ59SN3jcyWkcKidSkKdpM5HLw"
 			]
 		}
 	},
