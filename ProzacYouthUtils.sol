@@ -95,24 +95,29 @@ contract ProzacYouthUtils {
                 splitCount++;
             }
         }
+
         string[] memory splitArray = new string[](splitCount + 1);
         uint256 splitIndex;
-        bytes memory buffer = new bytes(strBytes.length);
-        uint256 bufferIndex;
+        uint256 start = 0;
         for (i = 0; i < strBytes.length; i++) {
             if (strBytes[i] == delimBytes[0]) {
-                splitArray[splitIndex] = string(buffer);
+                splitArray[splitIndex] = substring(strBytes, start, i);
                 splitIndex++;
-                buffer = new bytes(strBytes.length);
-                bufferIndex = 0;
-            } else {
-                buffer[bufferIndex] = strBytes[i];
-                bufferIndex++;
+                start = i + 1;
             }
         }
-        splitArray[splitIndex] = string(buffer);
+        splitArray[splitIndex] = substring(strBytes, start, strBytes.length);
         return splitArray;
     }
+
+    function substring(bytes memory strBytes, uint256 start, uint256 end) internal pure returns (string memory) {
+        bytes memory result = new bytes(end - start);
+        for (uint256 i = start; i < end; i++) {
+            result[i - start] = strBytes[i];
+        }
+        return string(result);
+    }
+
 
     function clearEntriesBatch(uint256 batchSize) public onlyAuthorized {
         uint256 length = entries.length;
@@ -142,17 +147,12 @@ contract ProzacYouthUtils {
                 "<td colspan=\"3\" align=\"right\" width=\"70%\" class=\"light-bg light-link\">",
                 "<div class=\"postInfo desktop\">",
                 "<span class=\"postNum desktop\">",
-                "<a class=\"light-link\" target=\"_blank\" href=\"",
-                etherscanUrl,
-                entries[i].hash,
-                "\">Tjo</a>",
                 "<a class=\"light-link\" style=\"font-size:12px;\" href=\"",
                 etherscanUrl,
                 entries[i].hash,
-                "\">",
+                "\" target=\"_blank\" title=\"Link to this transaction\">",
                 entries[i].formattedTime,
-                "</a>",
-                "</span></div></td></tr>",
+                "</a></span></div></td></tr>",
                 "<tr><td colspan=\"1\" valign=\"middle\" align=\"left\" class=\"light-bg\">",
                 "<ul align=\"left\" style=\"padding-left: 15px;font-size: 10px;\">",
                 "<li class=\"light-text-3\">Block: ",
