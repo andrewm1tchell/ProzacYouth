@@ -158,11 +158,11 @@
 			]
 		},
 		"Extension.sol": {
-			"keccak256": "0x46074880c994008580f6836d40980bbecb1b8ec60e338a9ea9d19eb3efc6fe35",
+			"keccak256": "0xd6ae2956645632f396bc75846b9742248d7b88a3c24136a96bca94e46fc3526d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3c1dc80c7f9c22568e88a9a125d99787d0cf62d8105b24921fba3a3a2a109f5b",
-				"dweb:/ipfs/QmZNayDXt8J5znHr2438tsQ1HkNWZiu4AB51jfS8oLJy6Y"
+				"bzz-raw://9f236d709f3a0eb0f5646826038949ea7e55b0072c7847d2258e09454c0300b9",
+				"dweb:/ipfs/QmSsFt8TdugBdC371Xkn9hpULzT4dYH1K4meKpWvQk7FfC"
 			]
 		},
 		"IManifoldERC721Edition.sol": {
@@ -174,27 +174,27 @@
 			]
 		},
 		"ProzacYouthEngine_1.sol": {
-			"keccak256": "0x4082638cb944a390ded014e34958ee8b77c0a00c04cb092e9ed04859bfaf3b95",
+			"keccak256": "0x6671f265f773847456fde7a790a14d266d1cdcdd14255e9ce3bcd493c2cb535e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://58cf59880996bf8c78b317b13cd6b41dac7d524e67f0391cd9453b0c8673d57b",
-				"dweb:/ipfs/QmbEP1YCvnoaJYjWEPSCMumJ1m896qJc821g86RLAzge7r"
+				"bzz-raw://724c62112e08a5bea8b497e7e1a931e3a5be6178800632c438028264b531d52d",
+				"dweb:/ipfs/QmWn8gK8ZuBLM3iqoj5WsYfzJyDYZg6GWwg1dT78gmeNxo"
 			]
 		},
 		"ProzacYouthEngine_2.sol": {
-			"keccak256": "0xea91f9d10931a257ae132530b5eaaffdab4bfe2cb5c369088a1d84de7bc77f0f",
+			"keccak256": "0xfaf35c9427994d31a44e8f2cdb6d8dfb66becbc27cb5517abb6146d3e8955edc",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://bf0f25c91f3f54e55fb210cfa9bd9ed2ee62e2a77675e10c4222c056415e795e",
-				"dweb:/ipfs/QmYg7HfBJhQJ5y8HBjyMWun4B8qFWFwsQJFX6bZqooo6ZU"
+				"bzz-raw://3efd36f267501ef6120d0e1147ad07995fdeceaaa055760f7e0fe452dc5324fb",
+				"dweb:/ipfs/QmZSdXRTURBTSUKFB8umXzDJWVxCdM91gPinJGyS8cqxdF"
 			]
 		},
 		"ProzacYouthUtils.sol": {
-			"keccak256": "0x34fee70c40d020b4b1890a95bf13a33a89141975eb2d59586ac19855dd764042",
+			"keccak256": "0x7d2407e3cd7c5574acdbfd429b29b512ccc097d00bae3365f86ba80e44af7546",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://26fbabf0b47c21f2e4cf17a21a31a6dea513a5bbff81e9cd7855f7f6e888805e",
-				"dweb:/ipfs/QmRtoedWkYDxmdEq4SkQgJ59SN3jcyWkcKidSkKdpM5HLw"
+				"bzz-raw://cfd4d60b0384c8880c6d3724bc94e16ded7233fe09ebea022b4564b2e76d6674",
+				"dweb:/ipfs/QmYKekjRFpE3N7EtQeXdRMnVUE6a43ARH4wCFYvuvKPWbo"
 			]
 		}
 	},
