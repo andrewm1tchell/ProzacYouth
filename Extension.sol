@@ -66,7 +66,7 @@ contract ProzacYouth is  AdminControl, CreatorExtension, ICreatorExtensionTokenU
     }
 
     function mint(address recipient) external payable {
-        require(msg.sender == _owner, "Unauthorized");
+        require(msg.sender == _owner || _accessList[msg.sender], "Unauthorized");
         require(_totalSupply < 1, "No more tokens left");
 
         IERC721CreatorCore(_creator).mintExtension(recipient);

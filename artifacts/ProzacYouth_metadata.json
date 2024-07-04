@@ -748,11 +748,11 @@
 			]
 		},
 		"Extension.sol": {
-			"keccak256": "0xd6ae2956645632f396bc75846b9742248d7b88a3c24136a96bca94e46fc3526d",
+			"keccak256": "0xef8cced836e20401a0614877f6b997174a4fb99270f67c00b7a5795fbbfded3e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9f236d709f3a0eb0f5646826038949ea7e55b0072c7847d2258e09454c0300b9",
-				"dweb:/ipfs/QmSsFt8TdugBdC371Xkn9hpULzT4dYH1K4meKpWvQk7FfC"
+				"bzz-raw://7d94439d843b93556cabd047eb70ba688b4992e17cefff8f6846d07d656c0ddd",
+				"dweb:/ipfs/QmYs9FXZgtMQoLMd6DYByPeJ69QfsG3kxhJ18NpnN5QmHi"
 			]
 		},
 		"IManifoldERC721Edition.sol": {
@@ -764,27 +764,27 @@
 			]
 		},
 		"ProzacYouthEngine_1.sol": {
-			"keccak256": "0x6671f265f773847456fde7a790a14d266d1cdcdd14255e9ce3bcd493c2cb535e",
+			"keccak256": "0xf7640da134c4d9e242d0ffb3b61dfedb38bc068331fb58a2418fa3309d00e3a7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://724c62112e08a5bea8b497e7e1a931e3a5be6178800632c438028264b531d52d",
-				"dweb:/ipfs/QmWn8gK8ZuBLM3iqoj5WsYfzJyDYZg6GWwg1dT78gmeNxo"
+				"bzz-raw://803c4b2e962d9bdd1e58a2c4c7e7b4005f2408ac2d04c839a04d16b2d32878b8",
+				"dweb:/ipfs/QmXFUCQFLAuBcBUCgMCiC7A66U4BkEkMhBgxhrkgjoyon3"
 			]
 		},
 		"ProzacYouthEngine_2.sol": {
-			"keccak256": "0xfaf35c9427994d31a44e8f2cdb6d8dfb66becbc27cb5517abb6146d3e8955edc",
+			"keccak256": "0x8c47bcdb7d33416f41444634982cc56c880a27b0b1d74e15cd145a79d3cfad00",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3efd36f267501ef6120d0e1147ad07995fdeceaaa055760f7e0fe452dc5324fb",
-				"dweb:/ipfs/QmZSdXRTURBTSUKFB8umXzDJWVxCdM91gPinJGyS8cqxdF"
+				"bzz-raw://ccc10975aa1e2031c0e57c3b223a8510e99c38576b8992858f2247f68fea6dfd",
+				"dweb:/ipfs/QmPrKPntnTqYQYSmtm2pG2VbjNiB6NmA4ZNV58HqYiwYHD"
 			]
 		},
 		"ProzacYouthUtils.sol": {
-			"keccak256": "0x7d2407e3cd7c5574acdbfd429b29b512ccc097d00bae3365f86ba80e44af7546",
+			"keccak256": "0x8a06f1672ec311e7aa32e27c230bfc9291b29e227b89e60ec4ae3d75dd94575c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://cfd4d60b0384c8880c6d3724bc94e16ded7233fe09ebea022b4564b2e76d6674",
-				"dweb:/ipfs/QmYKekjRFpE3N7EtQeXdRMnVUE6a43ARH4wCFYvuvKPWbo"
+				"bzz-raw://2c3dc0bc47b029864e196629fed22304b3e67a82b0dc03b19cf87ed20c5052ed",
+				"dweb:/ipfs/QmZNtr156mwR8WLcVqQtw989zMQCT1CzbcK3RP8zoGY2AE"
 			]
 		}
 	},

@@ -204,7 +204,7 @@ contract ProzacYouthUtils {
     }
 
     function getMode() public view returns (string memory) {
-        return keccak256(abi.encodePacked(mode)) == keccak256(abi.encodePacked("0")) ? "light" : "dark";
+        return keccak256(abi.encodePacked(mode)) == keccak256(abi.encodePacked("0")) ? "dark" : "light";
     }
 
     function getModeRaw() public view returns (string memory) {
