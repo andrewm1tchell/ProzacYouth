@@ -161,7 +161,7 @@ contract ProzacYouthUtils {
                 "<td colspan=\"3\" align=\"center\" valign=\"middle\" class=\"light-bg\">",
                 "<font class=\"regular_text\">",
                 "<div class=\"post reply\">",
-                "<blockquote style=\"white-space: pre-line;margin-top:0px;\" class=\"postMessage light-text-2\" id=\"m34079983\"><br>",
+                "<blockquote style=\"margin-top:0px;\" class=\"postMessage light-text-2\" id=\"m34079983\"><br>",
                 entries[i].text,
                 "</blockquote></div></font></td></tr>"
             ));
