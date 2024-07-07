@@ -141,13 +141,46 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "getEntriesHTML",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getEntry",
 				"outputs": [
 					{
-						"internalType": "string",
+						"components": [
+							{
+								"internalType": "string",
+								"name": "hash",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "blockNumber",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "timestamp",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "text",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "formattedTime",
+								"type": "string"
+							}
+						],
+						"internalType": "struct ProzacYouthUtils.Entry",
 						"name": "",
-						"type": "string"
+						"type": "tuple"
 					}
 				],
 				"stateMutability": "view",
@@ -213,6 +246,19 @@
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalEntriesInt",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -389,11 +435,11 @@
 	},
 	"sources": {
 		"ProzacYouthUtils.sol": {
-			"keccak256": "0x8a06f1672ec311e7aa32e27c230bfc9291b29e227b89e60ec4ae3d75dd94575c",
+			"keccak256": "0x4f1e0eba0bba0fb864c8a0cd883f2ddfed881e8dee6dd94879ea08afc0859b17",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2c3dc0bc47b029864e196629fed22304b3e67a82b0dc03b19cf87ed20c5052ed",
-				"dweb:/ipfs/QmZNtr156mwR8WLcVqQtw989zMQCT1CzbcK3RP8zoGY2AE"
+				"bzz-raw://7e639af874a766bc93410f04288b583fad10500cdf8c3d6ce6a098c9187e80f5",
+				"dweb:/ipfs/QmSJBZ5kU23cnt5KQgB4EnyH4npX8eU2EgnTVPUKr3GTux"
 			]
 		}
 	},

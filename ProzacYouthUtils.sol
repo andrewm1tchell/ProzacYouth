@@ -52,6 +52,10 @@ contract ProzacYouthUtils {
         entries.push(Entry(_hash, _blockNumber, _timestamp, _text, _formattedTime));
     }
 
+    function getEntry(uint256 index) public view returns (Entry memory) {
+        return entries[index];
+    }
+
     function updateEntry(
     uint256 index,
     string memory newHash,
@@ -130,48 +134,12 @@ contract ProzacYouthUtils {
         }
     }
 
-    //Wraps the entries into table rows for injecting into the animation url's HTML.
-    function getEntriesHTML() external view returns (string memory) {
-        string memory html;
-
-        for (uint256 i = 0; i < entries.length; i++) {
-            html = string(abi.encodePacked(
-                html,
-                "<tr class=\"table-row light-bg light-border light-text\">",
-                "<td colspan=\"1\" class=\"light-bg\" width=\"30%\" align=\"center\">",
-                "<font class=\"small_text\">",
-                "<a class=\"light-link\" target=\"_blank\" href=\"",
-                tjoUrl,
-                "\">Tjo</a>",
-                "<font></font></font></td>",
-                "<td colspan=\"3\" align=\"right\" width=\"70%\" class=\"light-bg light-link\">",
-                "<div class=\"postInfo desktop\">",
-                "<span class=\"postNum desktop\">",
-                "<a class=\"light-link\" style=\"font-size:12px;\" href=\"",
-                etherscanUrl,
-                entries[i].hash,
-                "\" target=\"_blank\" title=\"Link to this transaction\">",
-                entries[i].formattedTime,
-                "</a></span></div></td></tr>",
-                "<tr><td colspan=\"1\" valign=\"middle\" align=\"left\" class=\"light-bg\">",
-                "<ul align=\"left\" style=\"padding-left: 15px;font-size: 10px;\">",
-                "<li class=\"light-text-3\">Block: ",
-                entries[i].blockNumber,
-                "</li><li class=\"light-text-3\">Location: UNKNOWN</li></ul></td>",
-                "<td colspan=\"3\" align=\"center\" valign=\"middle\" class=\"light-bg\">",
-                "<font class=\"regular_text\">",
-                "<div class=\"post reply\">",
-                "<blockquote style=\"margin-top:0px;\" class=\"postMessage light-text-2\" id=\"m34079983\"><br>",
-                entries[i].text,
-                "</blockquote></div></font></td></tr>"
-            ));
-        }
-
-        return html;
-    }
-
     function getTotalEntries() external view returns (string memory) {
         return uintToString(entries.length);
+    }
+
+    function getTotalEntriesInt() external view returns (uint256) {
+        return entries.length;
     }
 
     function uintToString(uint256 value) internal pure returns (string memory) {
@@ -223,7 +191,7 @@ contract ProzacYouthUtils {
         andrewUrl = _andrewUrl;
     }
 
-      function getTjoUrl() external view returns (string memory) {
+    function getTjoUrl() external view returns (string memory) {
         return tjoUrl;
     }
 
